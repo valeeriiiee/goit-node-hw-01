@@ -3,7 +3,7 @@ import {
   getContactById,
   removeContact,
   addContact,
-} from "./contacts";
+} from "./contacts.js";
 
 import { Command } from "commander";
 const program = new Command();
@@ -24,6 +24,21 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     case "list":
       const contacts = await listContacts();
       console.table(contacts);
+      break;
+
+    case "get":
+      const contactsById = await getContactById(id);
+      console.log(contactsById);
+      break;
+
+    case "add":
+      const addNewContact = await addContact({ name, email, phone });
+      console.log(addNewContact);
+      break;
+
+    case "remove":
+      const deletedContact = await removeContact(id);
+      console.log(deletedContact);
       break;
 
     default:
