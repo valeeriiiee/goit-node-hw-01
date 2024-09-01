@@ -1,7 +1,7 @@
 {
-  "name": "homework-cli-application",
+  "name": "goit-node-hw-01",
   "version": "1.0.0",
-  "description": "homework — CLI application",
+  "description": "goit-node-hw-01",
   "main": "index.js",
   "type": "module",
   "scripts": {
